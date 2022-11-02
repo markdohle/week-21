@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+  <title>An Introduction to Three Tiered Applications</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+  <div class="container">
+    <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px">
+    <h1 class="header-text">An Introduction to Three Tiered Applications</h1>
+  </div>
+  <p>Please review the concepts covered this module.</p>
+
+<h2 id="three-tiered-applications">Three Tiered Applications</h2>
+<p>Three tiered applications consist of three main parts that work together to accomplish the same goal: to create a robust application that stores, manipulates, 
+  and retrieves data for a user to interact with. They are incredibly popular on the web. Not all applications are three tiered, and some have more than three tiers. 
+  <br><br>
+  The three tiers are: 
+</p>
+<ul> 
+<li>The client side tier (also known as the presentation or user interface tier)</li>
+<li>The server tier (also known as the business logic tier) </li>
+<li>The data storage tier (also known as the database tier)</li>
+</ul>
+<p>The three tiers work together to create, read, update, and delete data, as well as display data to the end user. </p>
+<p>Let&#39;s break the three tiers down a bit further. </p>
+<h3 id="client-side-tier">The Client-side Tier</h3>
+<p>The client side tier is anything that an end user sees or interacts with and is usually known as the user interface. It is usually written using HTML, CSS, and JavaScript, or using frameworks such as TailwindCSS or React. 
+  An example that has been built using React is the front page of Facebook.  When you "like" a post on Facebook, the client-side tier notifies the server tier of the associated change.</p>
+<h3 id="server-tier">The Server Tier</h3>
+<p>The server tier is where the business logic resides within an application. This section is mainly concerned with routing information from the client to the database. It also makes
+   sure the data is processed correctly.  For example, when you "like" a post on facebook, the server tier is responsible for making the appropriate change in the database. </p>
+<h3 id="data-storage-database-tier">Data Storage Tier</h3>
+<p>The database is where data is stored. The server retrieves data from the database and manipulates it according to the messages it receives from the client-side tier. 
+  It is important to remember that data is merely stored in a database. It is not manipulated in any way, that happens on the server tier. 
+  An example of a database would be a data center which Facebook uses to store user data such as a their name, email, and, in this case, history of what they have 
+  "liked". </p>
+
+  <h2 id="unit-testing">Unit Testing</h2>
+<p>At first, unit testing can seem overwhelming. You start by identifying a small piece of functionality to test. Use the setup, expected output, and assertion methods to write your test. </p>
+<p>Here&#39;s an example that tests if a function, <code>getUserName()</code> returns an expected output of &quot;Paul&quot;.</p>
+<pre><code class="lang-js">test(<span class="hljs-string">"username can be retrieved"</span>, () =&gt; {
+  const user = new User(<span class="hljs-string">"Paul"</span>)<span class="hljs-comment">; </span>
+  const userName = getUserName(<span class="hljs-name">user</span>)
+
+  expect(<span class="hljs-name">userName</span>).toBe(<span class="hljs-string">"Paul"</span>)<span class="hljs-comment">; </span>
+})<span class="hljs-comment">;</span>
+</code></pre>
+<p>First, you setup the test: <code>const user = new User(&quot;Paul&quot;)</code>. This sets the expectation that a new user is created to use in the test. </p>
+<p>You then establish the expected result: <code>const userName = getUserName(user)</code>. This sets the expectation that the <code>getUserName</code> function will equal the variable, <code>userName</code>, in this case, the stored string of <code>&quot;Paul&quot;</code>. </p>
+<p>Finally, you create the assertion. This will check that what you expect to happen is what you were expecting to happen. Use Jest&#39;s <em>assertions</em>, such as .toBe or .toEqual to write code that checks if the returned output you expect is equal to the output that is returned. 
+  If they match, the test has shown the code works. However, if they fail to match, you need to return to your code and fix it appropriately. </p>
+
+
+  <p class="footer">
+    <br>
+    © MIT xPRO 2020. All rights reserved. 
+  </p>
+</body>
